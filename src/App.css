@@ -52,3 +52,8 @@ nav {
 .navCart:hover {
   transform: scale(1.25);
 }
+
+.tituloSeccion {
+  text-align: center;
+  padding: 20px 0px;
+}

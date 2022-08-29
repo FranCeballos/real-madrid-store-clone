@@ -1,11 +1,6 @@
 import RealMadridLogo from "../images/realMadridStore.png";
 import NavOption from "./NavOption";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  solid,
-  regular,
-  brands,
-} from "@fortawesome/fontawesome-svg-core/import.macro";
+import CartWidget from "./CartWidget";
 
 function NavBar() {
   return (
@@ -25,11 +20,7 @@ function NavBar() {
           <NavOption name="MODA" />
         </ul>
         <a href="">
-          <FontAwesomeIcon
-            icon={solid("cart-shopping")}
-            size={"lg"}
-            className="navCart"
-          />
+          <CartWidget className="navCart" />
         </a>
       </nav>
     </header>
