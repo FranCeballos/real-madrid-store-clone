@@ -2,7 +2,7 @@ import RealMadridLogo from "../images/realMadridStore.png";
 import NavOption from "./NavOption";
 import CartWidget from "./CartWidget";
 
-function NavBar() {
+const NavBar = () => {
   return (
     <header className="nav">
       <nav className="nav">

@@ -1,4 +1,4 @@
-function NavOption(props) {
+const NavOption = (props) => {
   return (
     <li>
       <a className="navItem" href="">

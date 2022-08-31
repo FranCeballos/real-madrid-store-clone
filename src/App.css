@@ -57,3 +57,11 @@ nav {
   text-align: center;
   padding: 20px 0px;
 }
+
+.itemCounterContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
