@@ -9,7 +9,7 @@ const ItemCount = (props) => {
   };
 
   const clickHandlerSubtract = () => {
-    Value > 0 && setValue(Value - 1);
+    Value > 1 && setValue(Value - 1);
   };
 
   const clickHandlerAddCart = () => {
@@ -25,7 +25,9 @@ const ItemCount = (props) => {
       <Button onClick={clickHandlerSubtract} variant="outlined">
         -
       </Button>
-      <p>{Value}</p>
+      <div>
+        <p>{Value}</p>
+      </div>
       <Button onClick={clickHandlerAdd} variant="outlined">
         +
       </Button>

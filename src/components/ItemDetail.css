@@ -1,0 +1,72 @@
+.circularProgressContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.itemDetailFlex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  max-height: 100vh;
+  padding: 50px;
+  gap: 50px;
+}
+
+.itemDetailImage {
+  object-fit: cover;
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.itemDetailDivider {
+  width: 1px;
+  border: 0.5px solid rgb(216, 216, 216);
+  height: 100px;
+}
+
+.itemDetailRest {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 30px;
+}
+
+.itemDetailTitle {
+  font-size: 27px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.itemDetailDescription {
+  text-align: center;
+  font-weight: 200;
+  font-size: 18px;
+  margin-bottom: 50px;
+  width: 70%;
+}
+
+.itemDetailPrice {
+  font-size: 25px;
+  margin-bottom: 50px;
+}
+
+.itemDetailStock {
+  font-weight: 200;
+  margin-bottom: 15px;
+}
+
+.itemCounterContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}

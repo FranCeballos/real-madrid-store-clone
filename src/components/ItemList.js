@@ -1,20 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Item from "./Item";
 import "./ItemList.css";
-import customFetch from "../utils/customFetch";
-import itemData from "../utils/itemData";
 import CircularProgress from "@mui/material/CircularProgress";
 
-const ItemList = () => {
-  const [data, setData] = useState([]);
-  useEffect(() => {
-    customFetch(2000, itemData)
-      .then((datos) => setData(itemData))
-      .catch((err) => console.log(err));
-  });
-  return data.length ? (
+const ItemList = ({ itemData }) => {
+  return itemData.length ? (
     <div className="itemListGrid">
-      {data.map((item, index) => (
+      {itemData.map((item, index) => (
         <Item
           key={item.id}
           title={item.title}

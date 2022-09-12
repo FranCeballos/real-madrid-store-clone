@@ -1,23 +1,20 @@
-// import ItemCount from "./ItemCount";
 import React, { useState, useEffect } from "react";
 import customFetch from "../utils/customFetch";
 import itemData from "../utils/itemData";
-import ItemList from "./ItemList";
-import "./ItemListContainer.css";
+import ItemDetail from "./ItemDetail";
 
-const ItemListContainer = () => {
+const ItemDetailContainer = () => {
   const [data, setData] = useState([]);
   useEffect(() => {
     customFetch(2000, itemData)
       .then((datos) => setData(itemData))
       .catch((err) => console.log(err));
   });
-
   return (
-    <div>
-      <ItemList itemData={data} />
-    </div>
+    <>
+      <ItemDetail itemData={data} />
+    </>
   );
 };
 
-export default ItemListContainer;
+export default ItemDetailContainer;
