@@ -1,30 +1,32 @@
 import RealMadridLogo from "../images/realMadridStore.png";
 import NavOption from "./NavOption";
 import CartWidget from "./CartWidget";
+import { Link } from "react-router-dom";
+import "./NavBar.css";
 
 const NavBar = () => {
   return (
     <header className="nav">
       <nav className="nav">
-        <a href="">
+        <Link to="/">
           <img
             className="navLogo"
             src={RealMadridLogo}
             alt="Logo Real Madrid"
             height="60px"
           ></img>
-        </a>
+        </Link>
         <ul className="navList">
-          <NavOption name="EQUIPACIONES" />
-          <NavOption name="ENTRENAMIENTO" />
-          <NavOption name="MODA" />
+          <NavOption to="/category/1" name="EQUIPACIONES" />
+          <NavOption to="/category/2" name="ENTRENAMIENTO" />
+          <NavOption to="/category/3" name="MODA" />
         </ul>
-        <a href="">
+        <Link>
           <CartWidget className="navCart" />
-        </a>
+        </Link>
       </nav>
     </header>
   );
-}
+};
 
 export default NavBar;

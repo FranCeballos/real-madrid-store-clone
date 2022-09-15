@@ -8,52 +8,6 @@ body {
   font-family: "Oswald", sans-serif;
 }
 
-nav {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  background-color: #e5e5e5;
-  height: 80px;
-  width: 100%;
-  padding: 0px 30px;
-  gap: 10%;
-}
-
-.navLogo {
-  justify-self: left;
-}
-
-.navList {
-  list-style: none;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 50px;
-}
-
-.navItem {
+a {
   text-decoration: none;
-  color: rgb(28, 35, 103);
-  font-weight: 600;
-  letter-spacing: 2px;
-}
-
-.navItem:hover {
-  color: rgb(38, 60, 145);
-}
-
-.navCart {
-  color: black;
-  transition: all 0.3s ease;
-}
-
-.navCart:hover {
-  transform: scale(1.25);
-}
-
-.tituloSeccion {
-  text-align: center;
-  padding: 20px 0px;
 }

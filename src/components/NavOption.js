@@ -1,11 +1,13 @@
+import { Link } from "react-router-dom";
+import "./NavOption.css";
 const NavOption = (props) => {
   return (
     <li>
-      <a className="navItem" href="">
+      <Link className="navItem" to={props.to}>
         {props.name}
-      </a>
+      </Link>
     </li>
   );
-}
+};
 
 export default NavOption;

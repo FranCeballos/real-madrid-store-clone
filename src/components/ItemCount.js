@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Button from "@mui/material/Button";
+import "./ItemCount.css";
 
 const ItemCount = (props) => {
   const [Value, setValue] = useState(props.inicial);
@@ -9,7 +10,7 @@ const ItemCount = (props) => {
   };
 
   const clickHandlerSubtract = () => {
-    Value > 1 && setValue(Value - 1);
+    Value > 0 && setValue(Value - 1);
   };
 
   const clickHandlerAddCart = () => {
@@ -31,9 +32,15 @@ const ItemCount = (props) => {
       <Button onClick={clickHandlerAdd} variant="outlined">
         +
       </Button>
-      <Button onClick={clickHandlerAddCart} variant="contained">
-        Añadir a carrito
-      </Button>
+      {Value > 0 ? (
+        <Button onClick={clickHandlerAddCart} variant="contained">
+          Añadir a carrito
+        </Button>
+      ) : (
+        <Button onClick={clickHandlerAddCart} variant="contained" disabled>
+          Añadir a carrito
+        </Button>
+      )}
     </div>
   );
 };
