@@ -21,7 +21,7 @@ const NavBar = () => {
           <NavOption to="/category/2" name="ENTRENAMIENTO" />
           <NavOption to="/category/3" name="MODA" />
         </ul>
-        <Link>
+        <Link to="/cart">
           <CartWidget className="navCart" />
         </Link>
       </nav>

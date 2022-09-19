@@ -1,8 +1,18 @@
+import { useState } from "react";
 import ItemCount from "./ItemCount";
+import Button from "@mui/material/Button";
 import CircularProgress from "@mui/material/CircularProgress";
+import { Link } from "react-router-dom";
 import "./ItemDetail.css";
 
 const ItemDetail = ({ itemData }) => {
+  const [itemCount, setItemCount] = useState(0);
+
+  const onAdd = (count) => {
+    alert(`Se han añadido ${count} elemento/s al carrito`);
+    setItemCount(count);
+    console.log(count);
+  };
   return itemData.id ? (
     <div className="itemDetailFlex">
       <div className="itemDetailImage">
@@ -14,7 +24,15 @@ const ItemDetail = ({ itemData }) => {
         <p className="itemDetailDescription">{itemData.description}</p>
         <p className="itemDetailPrice">{itemData.price}</p>
         <p className="itemDetailStock">Stock: {itemData.stock} unidades</p>
-        <ItemCount inicial={0} stock={itemData.stock} />
+        {itemCount === 0 ? (
+          <ItemCount inicial={0} stock={itemData.stock} onAdd={onAdd} />
+        ) : (
+          <Link to="/cart">
+            <Button variant="contained" color="success">
+              Terminar la compra
+            </Button>
+          </Link>
+        )}
       </div>
     </div>
   ) : (

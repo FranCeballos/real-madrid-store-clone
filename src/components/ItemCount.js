@@ -2,23 +2,17 @@ import React, { useState } from "react";
 import Button from "@mui/material/Button";
 import "./ItemCount.css";
 
-const ItemCount = (props) => {
-  const [Value, setValue] = useState(props.inicial);
+const ItemCount = ({ stock, inicial, onAdd }) => {
+  const [Value, setValue] = useState(inicial);
 
   const clickHandlerAdd = () => {
-    Value !== props.stock && setValue(Value + 1);
+    Value !== stock && setValue(Value + 1);
+    console.log(Value);
   };
 
   const clickHandlerSubtract = () => {
     Value > 0 && setValue(Value - 1);
-  };
-
-  const clickHandlerAddCart = () => {
-    alert(
-      Value > 0
-        ? `Se han añadido ${Value} elemento/s al carrito`
-        : `No se han añadido elementos a tu carrito`
-    );
+    console.log(Value);
   };
 
   return (
@@ -33,11 +27,11 @@ const ItemCount = (props) => {
         +
       </Button>
       {Value > 0 ? (
-        <Button onClick={clickHandlerAddCart} variant="contained">
+        <Button onClick={() => onAdd(Value)} variant="contained">
           Añadir a carrito
         </Button>
       ) : (
-        <Button onClick={clickHandlerAddCart} variant="contained" disabled>
+        <Button variant="contained" disabled>
           Añadir a carrito
         </Button>
       )}

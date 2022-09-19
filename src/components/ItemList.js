@@ -8,9 +8,8 @@ const ItemList = ({ itemData }) => {
   return itemData.length ? (
     <div className="itemListGrid">
       {itemData.map((item) => (
-        <Link to={`/item/${item.id}`}>
+        <Link to={`/item/${item.id}`} key={item.id}>
           <Item
-            key={item.id}
             id={item.id}
             title={item.title}
             price={item.price}
