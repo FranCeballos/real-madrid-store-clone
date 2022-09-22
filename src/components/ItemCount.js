@@ -7,12 +7,10 @@ const ItemCount = ({ stock, inicial, onAdd }) => {
 
   const clickHandlerAdd = () => {
     Value !== stock && setValue(Value + 1);
-    console.log(Value);
   };
 
   const clickHandlerSubtract = () => {
     Value > 0 && setValue(Value - 1);
-    console.log(Value);
   };
 
   return (

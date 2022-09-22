@@ -4,15 +4,18 @@ import Button from "@mui/material/Button";
 import CircularProgress from "@mui/material/CircularProgress";
 import { Link } from "react-router-dom";
 import "./ItemDetail.css";
+import { useContext } from "react";
+import { CartContext } from "./CartContext";
 
 const ItemDetail = ({ itemData }) => {
   const [itemCount, setItemCount] = useState(0);
+  const context = useContext(CartContext);
 
   const onAdd = (count) => {
-    alert(`Se han añadido ${count} elemento/s al carrito`);
     setItemCount(count);
-    console.log(count);
+    context.addItem(itemData, count);
   };
+
   return itemData.id ? (
     <div className="itemDetailFlex">
       <div className="itemDetailImage">

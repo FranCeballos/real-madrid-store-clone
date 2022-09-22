@@ -6,8 +6,13 @@
 
 body {
   font-family: "Oswald", sans-serif;
+  margin-top: 80px;
 }
 
 a {
   text-decoration: none;
+}
+
+li {
+  list-style: none;
 }
