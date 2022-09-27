@@ -1,0 +1,29 @@
+.cartSummary {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  height: 350px;
+  border: 2px solid rgb(226, 226, 226);
+  border-radius: 10px;
+  padding: 40px;
+  gap: 15px;
+}
+
+.cartSummaryTitle {
+  font-size: 30px;
+  font-weight: 300;
+}
+
+.cartSummaryCat {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.cartSummarySubtitle {
+  font-size: 16px;
+}
+
+.cartSummaryValue {
+  font-weight: 200;
+}

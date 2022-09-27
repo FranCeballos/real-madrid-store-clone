@@ -2,6 +2,7 @@ import RealMadridLogo from "../images/realMadridStore.png";
 import NavOption from "./NavOption";
 import CartWidget from "./CartWidget";
 import { Link } from "react-router-dom";
+
 import "./NavBar.css";
 
 const NavBar = () => {

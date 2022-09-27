@@ -31,9 +31,33 @@ const CartContextProvider = ({ children }) => {
       return false;
     }
   };
+
+  const calcQuantity = () => {
+    let countArray = cartList.map((item) => item.quantity);
+    return countArray.reduce(
+      (prevValue, currentValue) => prevValue + currentValue,
+      0
+    );
+  };
+
+  const calcSubtotal = () => {
+    let subtotalArray = cartList.map((item) => item.quantity * item.price);
+    return subtotalArray.reduce(
+      (prevValue, currentValue) => prevValue + currentValue
+    );
+  };
+
   return (
     <CartContext.Provider
-      value={{ cartList, addItem, removeItem, clear, isInCart }}
+      value={{
+        cartList,
+        addItem,
+        removeItem,
+        clear,
+        isInCart,
+        calcQuantity,
+        calcSubtotal,
+      }}
     >
       {children}
     </CartContext.Provider>

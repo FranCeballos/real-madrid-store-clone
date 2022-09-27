@@ -2,6 +2,8 @@ import { useContext } from "react";
 import { CartContext } from "./CartContext";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
+import CartSummary from "./CartSummary";
+import CartItem from "./CartItem";
 import "./Cart.css";
 
 const Cart = () => {
@@ -18,36 +20,16 @@ const Cart = () => {
         </Button>
       </div>
       {context.cartList.length ? (
-        <ul className="cartList">
-          {context.cartList.map((item) => (
-            <li key={Math.random()}>
-              <div className="cartItemBox">
-                <div className="cartItemImageBox">
-                  <img
-                    className="cartItemImage"
-                    src={item.pictureUrl}
-                    alt={item.title}
-                  ></img>
-                </div>
-                <div className="cartItemTitleAndErrase">
-                  <p>Producto: {item.title}</p>
-                  <Button
-                    variant="contained"
-                    onClick={() => {
-                      context.removeItem(item.id);
-                    }}
-                  >
-                    Quitar producto
-                  </Button>
-                </div>
-                <div className="cartItemCountAndPrice">
-                  <p className="cartItemCount">{item.quantity} item(s)</p>
-                  <p className="cartItemPrice">{item.price} c/u</p>
-                </div>
-              </div>
-            </li>
-          ))}
-        </ul>
+        <div className="cartDescription">
+          <ul className="cartList">
+            {context.cartList.map((item) => (
+              <li key={Math.random()}>
+                <CartItem item={item} />
+              </li>
+            ))}
+          </ul>
+          <CartSummary discount={100} />
+        </div>
       ) : (
         <p className="cartItemEmptyCart">No hay items en tu carrito</p>
       )}
