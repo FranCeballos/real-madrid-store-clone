@@ -10,9 +10,11 @@ const CartContextProvider = ({ children }) => {
       let objIndex = newCartList.findIndex((obj) => obj.id === item.id);
       newCartList[objIndex].quantity += quantity;
       setCartList(newCartList);
+      console.log("Item existente en carrito añadido", newCartList);
     } else {
       item.quantity = quantity;
       setCartList([...cartList, item]);
+      console.log("Nuevo item añadido", item);
     }
   };
 

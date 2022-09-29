@@ -25,7 +25,7 @@ const ItemDetail = ({ itemData }) => {
       <div className="itemDetailRest">
         <p className="itemDetailTitle">{itemData.title}</p>
         <p className="itemDetailDescription">{itemData.description}</p>
-        <p className="itemDetailPrice">{itemData.price}</p>
+        <p className="itemDetailPrice">$ {itemData.price}</p>
         <p className="itemDetailStock">Stock: {itemData.stock} unidades</p>
         {itemCount === 0 ? (
           <ItemCount inicial={0} stock={itemData.stock} onAdd={onAdd} />

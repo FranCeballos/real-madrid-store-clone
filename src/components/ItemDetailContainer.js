@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import customFetch from "../utils/customFetch";
-import itemData from "../utils/itemData";
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "../utils/firebaseConfig";
 import ItemDetail from "./ItemDetail";
 
 const ItemDetailContainer = () => {
@@ -9,12 +9,19 @@ const ItemDetailContainer = () => {
   const { idItem } = useParams();
 
   useEffect(() => {
-    customFetch(
-      2000,
-      itemData.find((item) => item.id === Number(idItem))
-    )
-      .then((datos) => setData(datos))
-      .catch((err) => console.log(err));
+    async function firestoreFetchOne() {
+      const docRef = doc(db, "products", idItem);
+      const docSnap = await getDoc(docRef);
+
+      if (docSnap.exists()) {
+        setData({
+          id: idItem,
+          ...docSnap.data(),
+        });
+      } else {
+      }
+    }
+    firestoreFetchOne();
   }, [idItem]);
   return (
     <>
