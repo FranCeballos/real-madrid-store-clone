@@ -15,9 +15,15 @@ const Cart = () => {
         <Link to="/">
           <Button variant="contained">Seguir comprando</Button>
         </Link>
-        <Button variant="outlined" onClick={context.clear}>
-          Borrar todo
-        </Button>
+        {context.cartList.length ? (
+          <Button variant="outlined" onClick={context.clear}>
+            Borrar todo
+          </Button>
+        ) : (
+          <Button variant="outlined" disabled onClick={context.clear}>
+            Borrar todo
+          </Button>
+        )}
       </div>
       {context.cartList.length ? (
         <div className="cartDescription">

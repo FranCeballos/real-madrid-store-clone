@@ -32,9 +32,16 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  width: 110%;
   height: 200px;
   margin-bottom: 15px;
+  border-radius: 10px;
+  padding: 25px;
+  transition: 0.15s ease-in;
+}
+
+.cartItemBox:hover {
+  box-shadow: 0px 0px 10px 0px rgb(219, 219, 219);
 }
 
 .cartItemImageBox {
@@ -56,6 +63,10 @@
   gap: 30px;
   margin-right: 10%;
   width: 30%;
+}
+
+.cartItemTitle {
+  color: black;
 }
 
 .cartItemCountAndPrice {

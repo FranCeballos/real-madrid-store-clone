@@ -1,5 +1,6 @@
 import Button from "@mui/material/Button";
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 import { CartContext } from "./CartContext";
 
 const CartItem = ({ item }) => {
@@ -14,7 +15,9 @@ const CartItem = ({ item }) => {
         ></img>
       </div>
       <div className="cartItemTitleAndErrase">
-        <p>Producto: {item.title}</p>
+        <Link to={`/item/${item.id}`}>
+          <p className="cartItemTitle">Producto: {item.title}</p>
+        </Link>
         <Button
           variant="contained"
           onClick={() => {

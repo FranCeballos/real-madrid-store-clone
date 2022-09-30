@@ -5,16 +5,13 @@ export const CartContext = createContext();
 const CartContextProvider = ({ children }) => {
   const [cartList, setCartList] = useState([]);
   const addItem = (item, quantity) => {
-    if (isInCart(item.id)) {
-      let newCartList = cartList;
-      let objIndex = newCartList.findIndex((obj) => obj.id === item.id);
-      newCartList[objIndex].quantity += quantity;
-      setCartList(newCartList);
-      console.log("Item existente en carrito añadido", newCartList);
-    } else {
+    const foundItem = cartList.find((product) => product.id === item.id);
+    if (foundItem === undefined) {
       item.quantity = quantity;
       setCartList([...cartList, item]);
-      console.log("Nuevo item añadido", item);
+    } else {
+      foundItem.quantity += quantity;
+      setCartList([...cartList]);
     }
   };
 

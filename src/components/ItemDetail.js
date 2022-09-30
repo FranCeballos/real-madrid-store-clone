@@ -32,7 +32,7 @@ const ItemDetail = ({ itemData }) => {
         ) : (
           <Link to="/cart">
             <Button variant="contained" color="success">
-              Terminar la compra
+              Ir al carrito
             </Button>
           </Link>
         )}

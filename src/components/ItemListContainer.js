@@ -2,9 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ItemList from "./ItemList";
 import { CircularProgress } from "@mui/material";
+import { firestoreFetch } from "../utils/firestoreFetch";
 import "./ItemListContainer.css";
-import { db } from "../utils/firebaseConfig";
-import { query, orderBy, where, collection, getDocs } from "firebase/firestore";
 
 const ItemListContainer = () => {
   const [data, setData] = useState([]);
@@ -13,14 +12,10 @@ const ItemListContainer = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    async function fetchData() {
-      setLoading(true);
-      let q;
-      if (idCategory) {
-        q = query(
-          collection(db, "products"),
-          where("categoryId", "==", Number(idCategory))
-        );
+    setLoading(true);
+    firestoreFetch(idCategory)
+      .then((result) => setData(result))
+      .then(() => {
         switch (Number(idCategory)) {
           case 1:
             setCategoryName("Equipaciones");
@@ -32,21 +27,11 @@ const ItemListContainer = () => {
             setCategoryName("Moda");
             break;
           default:
-            setCategoryName("Default");
+            setCategoryName("Todos los productos");
         }
-      } else {
-        q = query(collection(db, "products"), orderBy("categoryId"));
-        setCategoryName("Todos los productos");
-      }
-      const querySnapshot = await getDocs(q);
-      const dataFromFirestore = querySnapshot.docs.map((item) => ({
-        id: item.id,
-        ...item.data(),
-      }));
-      setData(dataFromFirestore);
-      setLoading(false);
-    }
-    fetchData();
+      })
+      .catch((err) => console.log(err));
+    setLoading(false);
   }, [idCategory]);
 
   return loading ? (
