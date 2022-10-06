@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Button from "@mui/material/Button";
+import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import "./ItemCount.css";
 
 const ItemCount = ({ stock, inicial, onAdd }) => {
@@ -25,11 +26,15 @@ const ItemCount = ({ stock, inicial, onAdd }) => {
         +
       </Button>
       {Value > 0 ? (
-        <Button onClick={() => onAdd(Value)} variant="contained">
+        <Button
+          onClick={() => onAdd(Value)}
+          variant="contained"
+          endIcon={<AddShoppingCartIcon />}
+        >
           Añadir a carrito
         </Button>
       ) : (
-        <Button variant="contained" disabled>
+        <Button variant="contained" disabled endIcon={<AddShoppingCartIcon />}>
           Añadir a carrito
         </Button>
       )}

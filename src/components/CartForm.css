@@ -1,0 +1,19 @@
+.formContainer {
+  padding: 10px 0px 30px 0px;
+}
+
+.formTitle {
+  text-align: center;
+  font-weight: 300;
+  font-size: 1.5rem;
+}
+
+.formInputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 20px;
+  margin-top: 30px;
+}

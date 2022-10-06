@@ -1,4 +1,5 @@
-import Button from "@mui/material/Button";
+import { IconButton } from "@mui/material";
+import RemoveCircleIcon from "@mui/icons-material/RemoveCircle";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "./CartContext";
@@ -14,18 +15,10 @@ const CartItem = ({ item }) => {
           alt={item.title}
         ></img>
       </div>
-      <div className="cartItemTitleAndErrase">
+      <div className="cartItemTitleBox">
         <Link to={`/item/${item.id}`}>
           <p className="cartItemTitle">Producto: {item.title}</p>
         </Link>
-        <Button
-          variant="contained"
-          onClick={() => {
-            context.removeItem(item.id);
-          }}
-        >
-          Quitar producto
-        </Button>
       </div>
       <div className="cartItemCountAndPrice">
         <p className="cartItemCount">
@@ -33,6 +26,16 @@ const CartItem = ({ item }) => {
         </p>
         <p className="cartItemPrice">{`$ ${item.quantity * item.price}`}</p>
       </div>
+      <IconButton
+        className="cartRemoveItemButton"
+        variant="contained"
+        onClick={() => {
+          context.removeItem(item.id);
+        }}
+        starticon={<RemoveCircleIcon />}
+      >
+        <RemoveCircleIcon />
+      </IconButton>
     </div>
   );
 };

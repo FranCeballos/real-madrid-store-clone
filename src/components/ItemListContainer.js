@@ -8,6 +8,7 @@ import "./ItemListContainer.css";
 const ItemListContainer = () => {
   const [data, setData] = useState([]);
   const [categoryName, setCategoryName] = useState("");
+  const [categoryHeroImg, setCategoryHeroImg] = useState("");
   const { idCategory } = useParams();
   const [loading, setLoading] = useState(true);
 
@@ -19,15 +20,19 @@ const ItemListContainer = () => {
         switch (Number(idCategory)) {
           case 1:
             setCategoryName("Equipaciones");
+            setCategoryHeroImg("/images/heros/KitHero.png");
             break;
           case 2:
             setCategoryName("Entrenamiento");
+            setCategoryHeroImg("/images/heros/TrainingHero.png");
             break;
           case 3:
             setCategoryName("Moda");
+            setCategoryHeroImg("/images/heros/ModaHero.png");
             break;
           default:
-            setCategoryName("Todos los productos");
+            setCategoryName("Real Madrid Store");
+            setCategoryHeroImg("/images/heros/MainHero.png");
         }
       })
       .catch((err) => console.log(err));
@@ -39,9 +44,14 @@ const ItemListContainer = () => {
       <CircularProgress className="circularProgress" />
     </div>
   ) : (
-    <div>
-      <h1 className="tituloSeccion">{categoryName}</h1>
-      <ItemList itemData={data} />
+    <div className="ItemListContainer">
+      <div className="heroImgContainer">
+        <img className="heroImg" src={categoryHeroImg} alt={categoryName}></img>
+      </div>
+      <h1 className="sectionTitle">{categoryName}</h1>
+      <div className="itemList">
+        <ItemList itemData={data} />
+      </div>
     </div>
   );
 };

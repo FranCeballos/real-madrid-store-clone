@@ -16,3 +16,15 @@ a {
 li {
   list-style: none;
 }
+
+.pageNotFoundBox {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.pageNotFoundText {
+  font-weight: 500;
+}

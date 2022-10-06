@@ -1,5 +1,6 @@
 .cart {
   padding: 30px 50px;
+  min-height: 100vh;
 }
 
 .cartTitle {
@@ -32,7 +33,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 110%;
+  width: 700px;
   height: 200px;
   margin-bottom: 15px;
   border-radius: 10px;
@@ -47,7 +48,7 @@
 .cartItemImageBox {
   width: 20%;
   height: 100%;
-  margin-right: 50px;
+  margin-right: 20px;
 }
 
 .cartItemImage {
@@ -55,13 +56,12 @@
   width: 100%;
   object-fit: contain;
 }
-.cartItemTitleAndErrase {
+.cartItemTitleBox {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: flex-start;
   gap: 30px;
-  margin-right: 10%;
   width: 30%;
 }
 
@@ -74,7 +74,7 @@
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  gap: 30px;
+  gap: 15px;
 }
 
 .cartItemCount {
@@ -92,4 +92,15 @@
   padding-top: 30px;
   font-weight: 200;
   font-size: 20px;
+}
+
+.cartRemoveItemButton {
+  margin-left: 10px;
+  padding-left: 20px;
+}
+
+.cartFinishAlert {
+  position: fixed;
+  bottom: 3%;
+  left: 2%;
 }

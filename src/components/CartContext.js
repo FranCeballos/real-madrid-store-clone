@@ -4,6 +4,7 @@ export const CartContext = createContext();
 
 const CartContextProvider = ({ children }) => {
   const [cartList, setCartList] = useState([]);
+
   const addItem = (item, quantity) => {
     const foundItem = cartList.find((product) => product.id === item.id);
     if (foundItem === undefined) {
@@ -41,9 +42,11 @@ const CartContextProvider = ({ children }) => {
 
   const calcSubtotal = () => {
     let subtotalArray = cartList.map((item) => item.quantity * item.price);
-    return subtotalArray.reduce(
-      (prevValue, currentValue) => prevValue + currentValue
-    );
+    if (subtotalArray.length) {
+      return subtotalArray.reduce(
+        (prevValue, currentValue) => prevValue + currentValue
+      );
+    }
   };
 
   return (
