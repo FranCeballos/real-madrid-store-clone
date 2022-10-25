@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Button from "@mui/material/Button";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
-import "./ItemCount.css";
 
 const ItemCount = ({ stock, inicial, onAdd }) => {
   const [Value, setValue] = useState(inicial);

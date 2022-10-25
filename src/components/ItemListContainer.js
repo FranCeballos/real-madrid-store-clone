@@ -37,6 +37,7 @@ const ItemListContainer = () => {
       })
       .catch((err) => console.log(err));
     setLoading(false);
+    window.scrollTo(0, 0);
   }, [idCategory]);
 
   return loading ? (

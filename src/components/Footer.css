@@ -31,3 +31,13 @@
   width: 20px;
   object-fit: contain;
 }
+
+@media screen and (max-width: 425px) {
+  .footerText {
+    font-size: 0.7rem;
+  }
+
+  .footerBox {
+    padding: 0px 20px;
+  }
+}

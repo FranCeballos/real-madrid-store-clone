@@ -19,9 +19,11 @@
 .cartDescription {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: flex-start;
   margin-top: 50px;
+  margin-bottom: 100px;
+  gap: 50px;
 }
 
 .cartList {
@@ -103,4 +105,72 @@
   position: fixed;
   bottom: 3%;
   left: 2%;
+}
+
+@media screen and (max-width: 768px) {
+  .cartDescription {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .cartItemBox {
+    width: 100%;
+  }
+
+  .cartItemBox:hover {
+    box-shadow: 0px 0px 0px 0px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .cart {
+    padding: 40px 0px;
+  }
+  .cartDescription {
+    margin: 0;
+  }
+  .cartButtonsFlex {
+    justify-content: space-between;
+    padding: 0px 20px;
+  }
+  .cartItemBox {
+    flex-direction: column;
+    justify-content: center;
+    height: fit-content;
+    margin: 0;
+    gap: 15px;
+  }
+  .space {
+    margin-bottom: 20px;
+    width: 100px;
+    border: 0.5px solid rgb(216, 216, 216);
+    height: 1px;
+  }
+  .cartItemImageBox {
+    margin-right: 0;
+    width: 40%;
+  }
+
+  .cartItemTitleBox {
+    width: 100%;
+    align-items: center;
+  }
+
+  .cartItemTitle {
+    width: 100%;
+    text-align: center;
+  }
+
+  .cartFinishAlert {
+    left: 4%;
+    right: 4%;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .cartButtonsFlex {
+    flex-direction: column;
+    gap: 40px;
+  }
 }

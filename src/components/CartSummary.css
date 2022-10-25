@@ -27,3 +27,11 @@
 .cartSummaryValue {
   font-weight: 200;
 }
+
+@media screen and (max-width: 320px) {
+  .cartSummary {
+    width: 300px;
+    height: 350px;
+    padding: 40px;
+  }
+}

@@ -18,6 +18,10 @@ const ItemDetail = ({ itemData }) => {
     context.addItem(itemData, count);
   };
 
+  const scrollUp = () => {
+    window.scrollTo(0, 0);
+  };
+
   return itemData.id ? (
     <div>
       <Link to={`/category/${itemData.categoryId}`}>
@@ -30,8 +34,12 @@ const ItemDetail = ({ itemData }) => {
         </Button>
       </Link>
       <div className="itemDetailFlex">
-        <div className="itemDetailImage">
-          <img src={itemData.pictureUrl} alt={itemData.title} />
+        <div className="itemDetailImageBox">
+          <img
+            src={itemData.pictureUrl}
+            alt={itemData.title}
+            className="itemDetailImage"
+          />
         </div>
         <div className="itemDetailDivider"></div>
         <div className="itemDetailRest">
@@ -42,15 +50,27 @@ const ItemDetail = ({ itemData }) => {
           {itemCount === 0 ? (
             <ItemCount inicial={0} stock={itemData.stock} onAdd={onAdd} />
           ) : (
-            <Link to="/cart">
-              <Button
-                variant="contained"
-                color="success"
-                endIcon={<ArrowForwardIosIcon />}
-              >
-                Ir al carrito
-              </Button>
-            </Link>
+            <div className="itemDetailAfterAddButtons">
+              <Link to="/">
+                <Button
+                  variant="contained"
+                  startIcon={<ArrowBackIosNewIcon />}
+                  onClick={scrollUp}
+                >
+                  Seguir comprando
+                </Button>
+              </Link>
+              <Link to="/cart">
+                <Button
+                  variant="contained"
+                  color="success"
+                  endIcon={<ArrowForwardIosIcon />}
+                  onClick={scrollUp}
+                >
+                  Ir al carrito
+                </Button>
+              </Link>
+            </div>
           )}
         </div>
       </div>

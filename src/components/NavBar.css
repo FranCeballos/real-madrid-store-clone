@@ -21,11 +21,79 @@ nav {
   justify-self: left;
 }
 
-.navList {
+.navListDesktop {
   list-style: none;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   gap: 50px;
+}
+
+.navListMobile {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.navCart {
+  align-self: flex-end;
+}
+
+.menuIcon {
+  display: none !important;
+}
+
+.menuBox {
+  position: fixed;
+  left: 0;
+  top: 80px;
+  display: none;
+  width: 100%;
+  min-height: 100vh;
+  background-color: rgba(255, 255, 255, 0.971);
+  z-index: 3;
+  transform: translateX(-100vw);
+  transition: 0.3s ease-in-out;
+}
+
+.active {
+  transform: translateX(0px);
+}
+
+.menu {
+  display: inline-block;
+}
+
+.iconsBox {
+  display: flex;
+  width: fit-content;
+  height: fit-content;
+  gap: 15px;
+}
+
+@media screen and (max-width: 768px) {
+  nav {
+    justify-content: space-between;
+  }
+
+  .navListDesktop {
+    display: none;
+  }
+
+  .navListMobile {
+    flex-direction: column;
+    margin-top: 50px;
+  }
+
+  .menuIcon {
+    display: inline-flex !important;
+  }
+
+  .menuBox {
+    display: inline-block;
+  }
 }

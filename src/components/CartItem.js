@@ -8,6 +8,7 @@ const CartItem = ({ item }) => {
   const context = useContext(CartContext);
   return (
     <div className="cartItemBox">
+      <div className="space"></div>
       <div className="cartItemImageBox">
         <img
           className="cartItemImage"

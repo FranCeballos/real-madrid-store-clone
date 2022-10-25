@@ -8,7 +8,11 @@ const ItemList = ({ itemData }) => {
   return itemData.length ? (
     <div className="itemListGrid">
       {itemData.map((item) => (
-        <Link to={`/item/${item.id}`} key={item.id}>
+        <Link
+          to={`/item/${item.id}`}
+          key={item.id}
+          onClick={() => window.scrollTo(0, 0)}
+        >
           <Item
             id={item.id}
             title={item.title}

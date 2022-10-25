@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import "./NavOption.css";
 const NavOption = (props) => {
   return (
-    <li>
+    <li onClick={props.onClick}>
       <Link className="navItem" to={props.to}>
         {props.name}
       </Link>

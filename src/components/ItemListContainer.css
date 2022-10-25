@@ -16,6 +16,7 @@
   background-image: url("../../public/images/ContentBackground.png");
   width: 100%;
   min-height: 100vh;
+  background-repeat: no-repeat;
 }
 
 .heroImgContainer {
@@ -24,5 +25,16 @@
 
 .heroImg {
   object-fit: cover;
+  object-position: center;
   width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .heroImgContainer {
+    height: 200px;
+  }
+
+  .heroImg {
+    height: 100%;
+  }
 }
