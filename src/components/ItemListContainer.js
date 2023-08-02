@@ -20,19 +20,19 @@ const ItemListContainer = () => {
         switch (Number(idCategory)) {
           case 1:
             setCategoryName("Equipaciones");
-            setCategoryHeroImg("/images/heros/KitHero.png");
+            setCategoryHeroImg("/images/heros/KitHero.webp");
             break;
           case 2:
             setCategoryName("Entrenamiento");
-            setCategoryHeroImg("/images/heros/TrainingHero.png");
+            setCategoryHeroImg("/images/heros/TrainingHero.webp");
             break;
           case 3:
             setCategoryName("Moda");
-            setCategoryHeroImg("/images/heros/ModaHero.png");
+            setCategoryHeroImg("/images/heros/ModaHero.webp");
             break;
           default:
             setCategoryName("Real Madrid Store");
-            setCategoryHeroImg("/images/heros/MainHero.png");
+            setCategoryHeroImg("/images/heros/MainHero.webp");
         }
       })
       .catch((err) => console.log(err));
